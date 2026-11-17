@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RoomVerve — see your own room in a new style</title><meta name="description" content="RoomVerve: pick a style, take one photo, and see your own room in four new looks, with a shopping list.">
+<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><style>
+:root{--bg:#F9EFD2;--card:#FFFDF6;--ink:#2A2112;--muted:#6E6149;--line:#E7D5A3;--gold:#D4A017;--deep:#8A5E0A;--tint:#FCF0C4}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--deep)}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;background:rgba(249,239,210,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:9px}
+.word{font-weight:800;font-size:24px;letter-spacing:-.5px}.word .r{color:var(--deep)}.word .v{color:var(--gold)}
+.lang{display:flex;gap:4px}.lang button{border:1px solid var(--line);background:var(--card);color:var(--deep);font-weight:700;font-size:13px;padding:6px 10px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.hero{padding:64px 0 40px;text-align:center}
+.hero img{width:112px;height:112px;border-radius:26px;box-shadow:0 10px 30px rgba(138,94,10,.18)}
+.hero h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:22px 0 12px;letter-spacing:-1px}
+.hero p{font-size:19px;color:var(--muted);max-width:620px;margin:0 auto}
+.badge{display:inline-block;margin-top:26px;background:var(--ink);color:#FFFDF6;padding:12px 22px;border-radius:14px;font-weight:700}
+.badge small{display:block;font-weight:500;opacity:.75;font-size:12px}
+section{padding:34px 0}
+h2{font-size:28px;letter-spacing:-.5px;margin:0 0 16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card .n{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;align-items:center;justify-content:center}
+.card h3{margin:10px 0 6px;font-size:19px}.card p{margin:0;color:var(--muted)}
+.promise{background:var(--tint);border:1px solid var(--line);border-radius:18px;padding:22px}
+.styles{display:flex;flex-wrap:wrap;gap:8px}.styles span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:600}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.price .big{font-size:26px;font-weight:800;color:var(--deep)}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 26px 26px;margin:28px 0}
+.doc h1{font-size:34px;letter-spacing:-.5px}.doc h3{margin-top:28px}
+table{border-collapse:collapse;width:100%;font-size:15px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--tint)}
+.todo{background:#FFE08A;border-radius:4px;padding:0 3px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+[data-lang]{display:none}html[lang=en] [data-lang=en],html[lang=fr] [data-lang=fr]{display:revert}
+</style></head>
+<body>
+<header><div class="wrap"><a class="brand" href="index.html"><img src="icon.svg" alt=""><span class="word"><span class="r">Room</span><span class="v">Verve</span></span></a>
+<div class="lang" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="fr">FR</button></div></div></header>
+<main class="wrap">
+<div data-lang="en">
+<div class="hero"><img src="icon.svg" alt="RoomVerve icon"><h1>See your own room in a new style</h1>
+<p>Pick a style, take one photo, and see your room in four new looks, with tips from your guide and a shopping list. Your walls, windows and furniture stay exactly where they are.</p>
+<div class="badge">Coming soon to Google Play<small>Android app · English and French</small></div></div>
+<section><h2>How it works</h2><div class="steps">
+<div class="card"><span class="n">1</span><h3>Find your style</h3><p>Swipe through seven calm, modern looks and choose the one you love.</p></div>
+<div class="card"><span class="n">2</span><h3>Take one photo</h3><p>Your guide checks the photo and suggests small changes that suit your style.</p></div>
+<div class="card"><span class="n">3</span><h3>See four designs</h3><p>Four restyled versions of your room, each with its own shopping list.</p></div></div></section>
+<section><div class="promise"><h2>Our promise</h2><p>Your walls, windows, doors, floor and ceiling stay exactly as they are in your photo, and your furniture stays where it is. If a design changes them, we redo it free.</p></div></section>
+<section><h2>Seven styles</h2><div class="styles"><span>Warm Minimal</span><span>Scandinavian</span><span>Japandi</span><span>Organic Modern</span><span>Light Coastal</span><span>Modern Country</span><span>Modern Classic</span></div>
+<p style="color:var(--muted)">For homeowners, renters and landlords. Keep your walls, or see them repainted in a pale new colour.</p></section>
+<section><h2>Prices</h2><div class="price">
+<div class="card"><h3>Try it</h3><div class="big">2 free</div><p>Two free redesigns, four designs each.</p></div>
+<div class="card"><h3>RoomVerve Plus</h3><div class="big">£7.99/month</div><p>Unlimited redesigns. Cancel any time.</p></div>
+<div class="card"><h3>One room</h3><div class="big">£2.99</div><p>One redesign, no subscription.</p></div></div></section>
+<section><h2>Your privacy</h2><p>Your photos and designs are saved on your phone. A photo is only sent to our AI providers to check it and create your designs. Read the <a href="privacy.html">privacy policy</a>.</p>
+<p>Questions? Email <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a>.</p></section>
+</div>
+<div data-lang="fr">
+<div class="hero"><img src="icon.svg" alt="Icône RoomVerve"><h1>Votre propre pièce dans un nouveau style</h1>
+<p>Choisissez un style, prenez une photo et découvrez votre pièce sous quatre nouveaux looks, avec les conseils de votre guide et une liste d’achats. Vos murs, fenêtres et meubles restent exactement à leur place.</p>
+<div class="badge">Bientôt sur Google Play<small>Application Android · anglais et français</small></div></div>
+<section><h2>Comment ça marche</h2><div class="steps">
+<div class="card"><span class="n">1</span><h3>Trouvez votre style</h3><p>Faites défiler sept looks calmes et modernes, et choisissez celui que vous aimez.</p></div>
+<div class="card"><span class="n">2</span><h3>Prenez une photo</h3><p>Votre guide vérifie la photo et propose de petits changements adaptés à votre style.</p></div>
+<div class="card"><span class="n">3</span><h3>Découvrez quatre propositions</h3><p>Quatre versions relookées de votre pièce, chacune avec sa liste d’achats.</p></div></div></section>
+<section><div class="promise"><h2>Notre promesse</h2><p>Vos murs, fenêtres, portes, sol et plafond restent exactement comme sur votre photo, et vos meubles restent à leur place. Si une proposition les modifie, nous la refaisons gratuitement.</p></div></section>
+<section><h2>Sept styles</h2><div class="styles"><span>Minimal chaleureux</span><span>Scandinave</span><span>Japandi</span><span>Moderne organique</span><span>Bord de mer clair</span><span>Campagne moderne</span><span>Classique moderne</span></div>
+<p style="color:var(--muted)">Pour les propriétaires, les locataires et les bailleurs. Gardez vos murs, ou voyez-les repeints dans une nouvelle couleur pâle.</p></section>
+<section><h2>Tarifs</h2><div class="price">
+<div class="card"><h3>Pour essayer</h3><div class="big">2 gratuits</div><p>Deux relookings gratuits, quatre propositions chacun.</p></div>
+<div class="card"><h3>RoomVerve Plus</h3><div class="big">7,99 £/mois</div><p>Relookings illimités. Résiliable à tout moment.</p></div>
+<div class="card"><h3>Une pièce</h3><div class="big">2,99 £</div><p>Un relooking, sans abonnement.</p></div></div></section>
+<section><h2>Vos données</h2><p>Vos photos et propositions sont enregistrées sur votre téléphone. Une photo n’est envoyée à nos fournisseurs d’IA que pour la vérifier et créer vos propositions. Lire la <a href="privacy.html">politique de confidentialité</a>.</p>
+<p>Des questions ? Écrivez à <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a>.</p></section>
+</div></main>
+<footer><div class="wrap"><span>© 2026 RoomVerve · Saibou Ouattara, sole trader · <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a></span>
+<span><a href="privacy.html"><span data-lang="en">Privacy policy</span><span data-lang="fr">Confidentialité</span></a> · <a href="terms.html"><span data-lang="en">Terms of use</span><span data-lang="fr">Conditions d’utilisation</span></a></span></div></footer>
+<script>
+(function(){
+  var saved=null;try{saved=localStorage.getItem('rv-lang')}catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  var lang=saved||(nav.indexOf('fr')===0?'fr':'en');
+  function set(l){document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});
+    try{localStorage.setItem('rv-lang',l)}catch(e){}}
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  set(lang);
+})();
+</script></body></html>

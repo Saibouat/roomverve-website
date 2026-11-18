@@ -13,8 +13,8 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand img{width:36px;height:36px;border-radius:9px}
 .word{font-weight:800;font-size:24px;letter-spacing:-.5px}.word .r{color:var(--deep)}.word .v{color:var(--gold)}
-.lang{display:flex;gap:4px}.lang button{border:1px solid var(--line);background:var(--card);color:var(--deep);font-weight:700;font-size:13px;padding:6px 10px;border-radius:999px;cursor:pointer}
-.lang button[aria-pressed=true]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.lang{position:relative}.lang-btn{border:0;background:none;color:var(--deep);font:inherit;font-weight:700;font-size:15px;padding:8px 6px;cursor:pointer;border-radius:8px}.lang-btn:hover,.lang-btn[aria-expanded=true]{background:rgba(212,160,23,.15)}
+.lang-menu{display:none;position:absolute;right:0;top:calc(100% + 6px);min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 24px rgba(60,40,0,.15);padding:6px;margin:0;list-style:none}.lang-menu.open{display:block}.lang-menu button{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;background:none;font:inherit;font-size:16px;color:var(--ink);padding:10px 12px;border-radius:10px;cursor:pointer;text-align:left}.lang-menu button:hover{background:rgba(212,160,23,.12)}.lang-menu button[aria-checked=true]{font-weight:700;color:var(--deep)}.lang-menu button[aria-checked=true]::after{content:'✓';color:var(--gold);font-weight:800}
 .hero{padding:64px 0 40px;text-align:center}
 .hero img{width:112px;height:112px;border-radius:26px;box-shadow:0 10px 30px rgba(138,94,10,.18)}
 .hero h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:22px 0 12px;letter-spacing:-1px}
@@ -41,9 +41,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
 </style></head>
 <body>
 <header><div class="wrap"><a class="brand" href="index.html"><img src="icon.svg" alt=""><span class="word"><span class="r">Room</span><span class="v">Verve</span></span></a>
-<div class="lang" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="fr">FR</button></div></div></header>
+<div class="lang"><button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Language / Langue">🌐 <span class="lang-code">EN</span> ▾</button><ul class="lang-menu" role="menu"><li><button type="button" role="menuitemradio" data-set="en">English</button></li><li><button type="button" role="menuitemradio" data-set="fr">Français</button></li></ul></div></div></header>
 <main class="wrap"><div class="doc" data-lang="en"><h1>Terms of use</h1><p><strong>Last updated: 18 November 2026</strong></p>
-<p>By using RoomVerve you agree to these terms. RoomVerve is run by SAIBOUAT LTD, a company registered in England and Wales (company number 17587711), trading as RoomVerve. Registered office: 91 Wellington Road, Enfield, EN1 2PW, United Kingdom. Contact: <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a>.</p>
+<p>By using RoomVerve you agree to these terms. RoomVerve is run by SAIBOUAT LTD, a company registered in England and Wales (company number 17587711), trading as RoomVerve. Registered office: 7 Bushberry Court, 91 Wellington Road, Enfield, EN1 2PW, United Kingdom. Contact: <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a>.</p>
 <h3>1. What RoomVerve does</h3>
 <p>You choose a style and take a photo of your room. An AI guide checks the photo and suggests ideas, and RoomVerve creates four restyled pictures of the same room with a shopping list. You must be 16 or over to use RoomVerve. If you are under 18, check with a parent or guardian before buying a subscription or a room.</p>
 <h3>2. The designs are illustrations</h3>
@@ -83,7 +83,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
 <h3>11. Law</h3>
 <p>These terms are governed by the law of England and Wales. If you live elsewhere in the UK, you can also bring proceedings in your local courts.</p></div>
 <div class="doc" data-lang="fr"><h1>Conditions d’utilisation</h1><p><strong>Dernière mise à jour : 18 novembre 2026</strong></p>
-<p>En utilisant RoomVerve, vous acceptez ces conditions. RoomVerve est exploité par SAIBOUAT LTD, société immatriculée en Angleterre et au pays de Galles (numéro 17587711), exerçant sous le nom RoomVerve. Siège social : 91 Wellington Road, Enfield, EN1 2PW, Royaume-Uni. Contact : <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a>.</p>
+<p>En utilisant RoomVerve, vous acceptez ces conditions. RoomVerve est exploité par SAIBOUAT LTD, société immatriculée en Angleterre et au pays de Galles (numéro 17587711), exerçant sous le nom RoomVerve. Siège social : 7 Bushberry Court, 91 Wellington Road, Enfield, EN1 2PW, Royaume-Uni. Contact : <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a>.</p>
 <h3>1. Ce que fait RoomVerve</h3>
 <p>Vous choisissez un style et prenez une photo de votre pièce. Un guide IA vérifie la photo et propose des idées, puis RoomVerve crée quatre images relookées de la même pièce avec une liste d’achats. Vous devez avoir 16 ans ou plus pour utiliser RoomVerve. Si vous avez moins de 18 ans, demandez l’accord d’un parent ou tuteur avant d’acheter un abonnement ou une pièce.</p>
 <h3>2. Les propositions sont des illustrations</h3>
@@ -122,17 +122,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-betw
 <p>Vos pièces sont enregistrées uniquement sur votre téléphone. Si vous supprimez l’application ou perdez votre téléphone, elles ne peuvent pas être récupérées.</p>
 <h3>11. Droit applicable</h3>
 <p>Ces conditions sont régies par le droit de l’Angleterre et du pays de Galles. Si vous résidez ailleurs au Royaume-Uni, vous pouvez aussi saisir les tribunaux de votre lieu de résidence.</p></div></main>
-<footer><div class="wrap"><span>© 2026 SAIBOUAT LTD, trading as RoomVerve · <span data-lang="en">Registered in England and Wales, company no. 17587711 · Registered office: 91 Wellington Road, Enfield, EN1 2PW</span><span data-lang="fr">Société immatriculée en Angleterre et au pays de Galles, n° 17587711 · Siège social : 91 Wellington Road, Enfield, EN1 2PW</span> · <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a></span>
+<footer><div class="wrap"><span>© 2026 SAIBOUAT LTD, <span data-lang="en">trading as</span><span data-lang="fr">exerçant sous le nom</span> RoomVerve · <span data-lang="en">Registered in England and Wales, company no. 17587711 · Registered office: 7 Bushberry Court, 91 Wellington Road, Enfield, EN1 2PW</span><span data-lang="fr">Société immatriculée en Angleterre et au pays de Galles, n° 17587711 · Siège social : 7 Bushberry Court, 91 Wellington Road, Enfield, EN1 2PW</span> · <a href="mailto:hello@roomverve.co.uk">hello@roomverve.co.uk</a></span>
 <span><a href="privacy.html"><span data-lang="en">Privacy policy</span><span data-lang="fr">Confidentialité</span></a> · <a href="terms.html"><span data-lang="en">Terms of use</span><span data-lang="fr">Conditions d’utilisation</span></a></span></div></footer>
 <script>
 (function(){
   var saved=null;try{saved=localStorage.getItem('rv-lang')}catch(e){}
   var nav=(navigator.language||'en').toLowerCase();
   var lang=saved||(nav.indexOf('fr')===0?'fr':'en');
+  var btn=document.querySelector('.lang-btn'),menu=document.querySelector('.lang-menu');
+  function close(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}
   function set(l){document.documentElement.lang=l;
-    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});
+    document.querySelector('.lang-code').textContent=l.toUpperCase();
+    menu.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-checked',b.dataset.set===l)});
     try{localStorage.setItem('rv-lang',l)}catch(e){}}
-  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  btn.addEventListener('click',function(e){e.stopPropagation();var o=!menu.classList.contains('open');menu.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)});
+  menu.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set);close();btn.focus()})});
+  document.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
   set(lang);
 })();
 </script></body></html>
